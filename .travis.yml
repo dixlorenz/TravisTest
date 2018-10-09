@@ -1,27 +1,22 @@
 sudo: required
-
 branches:
   only:
-    - master
-
+  - master
 before_install: 
-
 install: 
-
 language: objective-c
 osx_image: xcode10
-
 script:
-  - set -o pipefail && xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
+- set -o pipefail && xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
 
 deploy:
   skip_cleanup: true
   provider: s3
-  access_key_id:AKIAJBNZK5EIAHEZHTSQ
+  access_key_id: "AKIAJBNZK5EIAHEZHTSQ"
   secret_access_key:
-    secure:PayuzKxGOiW1OUTqwJoalbqLIraLmWVRlPWFeagbqVeR07mSBuxF0nlQSe0BwF5kx30PuQaoIZ8m+x1srix+lCfGzk26Qfe8u9TBBTKL6pj4Bw1ssjyZr6/+P/oBIttln/fvPJiYFoNAehmuQ3ZdZKYKIrH2InZGb9Oy/3BBdtt/mqeWDvBEK98z6wJBzYPkbSdlFC2AnFdPKOX9ehVbRdHeBzlOxeRpiKZPtuUx3B3W8OSCInMqa2vYcWhOANAPFySKiO2huhrYmRGp08QOO5trSDpx8VXALkLIOZW3U0zu7/7Szwnj/jWhe4ezT2+ku8jNyd08Oi08SqJztvnUzM5P29rmZT0+gnHH15JdlG74MSdUEqSHgsuVnuzGZZ/Jd+g7uM6idKdbD2uB3H6vdrRD9z4uK2x+b0y8GujMywMvK6I1IPWiI2GYBH+hisM7xnJ1GVG3lJn0XeXhAFRrl+YKXKd7Y0zPAxWzDUb3G1ffPS6U5iChfqUHGKomOQzc4JBQJnufpWMx3TCWRIg7hUHayEgTZ8KsRBuRne+J8fjxoBgEkDU/6k0/5PODAwVJ1ZC0bKx7k7Murt2KsbyxygpikBbPoR5+qTWPGezqynhPkhz/v8lyKhddtALLTo7uidlJsB7yH8lhhIeBA2i9yGhJ3gfXMfz+x/kg3Z3CIMc=
+    secure: "PJJbronvcbfi/DfOC7qIxUQOlZCWqUVQvKEFn47eP5SFDZZKefwVogzpSbRsX0e5zmO/FOzm5xrzr78A5TApxhQ7yPJj81OJHsNaN9xA+5aELM+Fm2kKSodfsjeM3xnHQLFMX7dEviQzdEpIJdc4qxZRTfhuxXsXB86J0H6iX4AhUOiXx2ypU9EoUTQ/FfLEWrMxkObR+CVF1hdjWKmNnVuznegsbuVcrjvcOhHjQFo8ruCBd0Y5sPBLdK8b2mCiZ645kQwJ66A4/oUob/naU3g1ODJbmSp+mGZSSP0bJaq8sdZU9MrU0FIjIy2Dcebq7Nqi9+xa04xSmbBjN9+WZri88YefdrFRUixX+++9QaDWIqLdbvaRtv6lK0e6x4ZfvkAvccHkTFxJKItCFIH3PNv0Ot/p73LHYLlGHDfiOwjt0Onpg3Xz46Xid1ln9M+NJ/35YRc5cbmyDI8Zu5/AbN5EC1jzLO7RwXL7DlXcvz9QR9LTxmQp9S1gBU9x246lxONYeng9iyPBqhY+Qoj3KkvZ6BvNNa6OW5jCItTRcIs8QDiRYVA9jKcWVzZiYtn/v6PTjvX1ltoh2ekGkTGhvFu6yYrukns+CChxxGtZwk/zJma0uKSExPBo1q7leBSH0oFATw3N3AhGS/P4EFEzRP4cqNY99iycdR5KiPBkW6U="
   bucket: medimach
   region: eu-west-1
-  file: $HOME/bin/TravisTest
+  file: "$HOME/bin/TravisTest"
   upload-dir: dlorenz
   acl: authenticated_read
