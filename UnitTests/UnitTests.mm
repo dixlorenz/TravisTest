@@ -23,7 +23,7 @@
 }
 
 - (void)testExample {
-   XCTAssert(true);
+   XCTAssert(false, "Example failed");
 }
 
 //- (void)testPerformanceExample {
