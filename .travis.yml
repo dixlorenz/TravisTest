@@ -1,29 +1,22 @@
 sudo: required
-
 branches:
   only:
-    - master
-
-before_install:
-
-install:
-#  - sudo curl -L -o boost_1_68_0.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.68.0/boost_1_68_0.tar.bz2/download
-#  - sudo tar --bzip2 -xf boost_1_68_0.tar.bz2
-#  - cd boost_1_68_0
-#  - sudo ./bootstrap.sh --prefix=/usr/local/boost168 --with-libraries=thread,filesystem,system
-#  - sudo ./b2 -j4 link=static cxxflags="-std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden" install -d0
-#  - cd ..
-
+  - master
+before_install: 
+install: 
 language: objective-c
-
-#cache:
-#  directories:
-#    - /usr/local/boost168
-
 osx_image: xcode10
 script:
-   - set -o pipefail && xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
-
-# xcode_project: TravisTest.xcodeproj
-# xcode_scheme: TravisTest
-# xcode_sdk: iphonesimulator8.4
+- set -o pipefail && xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin
+  DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
+deploy:
+  provider: s3
+  access_key_id: AKIAJFBMSCEYOJMWIP2Q
+  secret_access_key:
+    secure: JTJMotXvp/s/GAS8LNqz7JZrHQzCqhNPY/liZYJRkK8rxqKfVETAHGk/Z+o1ffV3GH2hhkxW8LZQ3vh3BaobOoGFYqKM1AUA+Qlx/CKppY+WUQSrDA5TNqCVLPnsBCOqPIviLNZU5EmWrjp7u74IyOv1HtpdFKAnimWvqsb+NZt6pJwdKoKjRYPzqPnzXMDl0D6LZ+kllp24N3v/olgTSaIqX9l5VQ8lqT2T8ejaqwng35jPoYST5f3tKfjlbnad6Q6MnuDkDsfMf/m2QMbhFvrMbWngVcXgc5Z6UGpTlcLSZZ/a5bY9Pdod1npHB9OF+lMR0O2i0QjXMhivrBePwITEJEwFpxOZuOcvfCtIyVcDNbAKMAjWBzAuw1IfdH8+WVeO8jyFQoN+BAR/Vxf8npTgtSrMKkPE6z/hpt6kU1PhGYRSG1AtwxylHMpUPwRQZtXAwEMRpTG9WlMczyc0pj3pD2CxINWpOHZ85wlTCRmDaxjTmYdBR+AJwZRkE2J662N1lVYIDodMCbZMuT++25wftFIi4G1WhCaqKD54yqHN/Oog4GLKYY+9iPG7taBA6o/2Acq0Ntdd1aJx/FJREX9yVKx0btYrj0ctBIC5NrqYfcAPALr8BGJ+6AGQOhZXwkIMDuKTv6ucID9TqKWXNfjncwCVAxMMQhlN8t22EpI=
+  bucket: medimach
+  local-dir: "$HOME/bin"
+  upload-dir: dlorenz
+  acl: authenticated_read
+  on:
+    repo: dixlorenz/TravisTest
