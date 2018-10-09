@@ -1,14 +1,19 @@
 sudo: required
+
 branches:
   only:
-  - master
+    - master
+
 before_install: 
+
 install: 
+
 language: objective-c
 osx_image: xcode10
+
 script:
-- set -o pipefail && xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin
-  DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
+  - set -o pipefail && xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
+
 deploy:
   provider: s3
   access_key_id: AKIAJFBMSCEYOJMWIP2Q
@@ -18,5 +23,5 @@ deploy:
   local-dir: "$HOME/bin"
   upload-dir: dlorenz
   acl: authenticated_read
-  on:
-    repo: dixlorenz/TravisTest
+  # on:
+    # repo: dixlorenz/TravisTest
