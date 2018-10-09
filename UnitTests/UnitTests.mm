@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#include <boost/optional.hpp>
+
 @interface UnitTests : XCTestCase
 
 @end
@@ -22,8 +24,11 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
-   XCTAssert(true, "Example passed");
+- (void)testOptional {
+   boost::optional<int> i;
+   XCTAssert(!i);
+   i = 4;
+   XCTAssert(i);
 }
 
 //- (void)testPerformanceExample {
