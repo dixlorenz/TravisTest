@@ -1,0 +1,7 @@
+before_install:
+
+language: objective-c
+osx_image: xcode10
+xcode_project: TravisTest.xcodeproj
+# xcode_scheme: DLCLWorkbench
+# xcode_sdk: iphonesimulator8.4
