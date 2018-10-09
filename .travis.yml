@@ -7,12 +7,12 @@ branches:
 before_install:
 
 install:
-  - sudo curl -L -o boost_1_68_0.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.68.0/boost_1_68_0.tar.bz2/download
-  - sudo tar --bzip2 -xf boost_1_68_0.tar.bz2
-  - cd boost_1_68_0
-  - sudo ./bootstrap.sh --prefix=/usr/local/boost168 --with-libraries=thread,filesystem,system
-  - sudo ./b2 -j4 link=static cxxflags="-std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden" install -d0
-  - cd ..
+#  - sudo curl -L -o boost_1_68_0.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.68.0/boost_1_68_0.tar.bz2/download
+#  - sudo tar --bzip2 -xf boost_1_68_0.tar.bz2
+#  - cd boost_1_68_0
+#  - sudo ./bootstrap.sh --prefix=/usr/local/boost168 --with-libraries=thread,filesystem,system
+#  - sudo ./b2 -j4 link=static cxxflags="-std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden" install -d0
+#  - cd ..
 
 language: objective-c
 
@@ -21,6 +21,9 @@ language: objective-c
 #    - /usr/local/boost168
 
 osx_image: xcode10
-xcode_project: TravisTest.xcodeproj
-xcode_scheme: TravisTest
+script:
+   - set -o pipefail && xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
+
+# xcode_project: TravisTest.xcodeproj
+# xcode_scheme: TravisTest
 # xcode_sdk: iphonesimulator8.4
