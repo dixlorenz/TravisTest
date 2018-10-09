@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 
 #include <boost/optional.hpp>
+#include <boost/filesystem.hpp>
 
 @interface UnitTests : XCTestCase
 
@@ -29,6 +30,19 @@
    XCTAssert(!i);
    i = 4;
    XCTAssert(i);
+}
+
+- (void)testFilesystem {
+   using namespace boost::filesystem;
+
+   auto do_something = [](auto x) {};
+
+   path p = current_path();
+   if (is_directory(p))
+      {
+        for (directory_entry& x : directory_iterator(p))
+         do_something(x);
+      }
 }
 
 //- (void)testPerformanceExample {
