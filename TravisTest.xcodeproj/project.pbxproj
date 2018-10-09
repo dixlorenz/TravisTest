@@ -29,6 +29,7 @@
 		CE445D60216CA199007EB75C /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE445D62216CA199007EB75C /* UnitTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UnitTests.mm; sourceTree = "<group>"; };
 		CE445D64216CA199007EB75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE445D69216CA7D7007EB75C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 		CE445D51216C9C35007EB75C /* TravisTest */ = {
 			isa = PBXGroup;
 			children = (
+				CE445D69216CA7D7007EB75C /* README.md */,
 				CE445D52216C9C35007EB75C /* main.cpp */,
 			);
 			path = TravisTest;
