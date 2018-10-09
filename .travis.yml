@@ -21,6 +21,7 @@ deploy:
   secret_access_key:
     secure: JTJMotXvp/s/GAS8LNqz7JZrHQzCqhNPY/liZYJRkK8rxqKfVETAHGk/Z+o1ffV3GH2hhkxW8LZQ3vh3BaobOoGFYqKM1AUA+Qlx/CKppY+WUQSrDA5TNqCVLPnsBCOqPIviLNZU5EmWrjp7u74IyOv1HtpdFKAnimWvqsb+NZt6pJwdKoKjRYPzqPnzXMDl0D6LZ+kllp24N3v/olgTSaIqX9l5VQ8lqT2T8ejaqwng35jPoYST5f3tKfjlbnad6Q6MnuDkDsfMf/m2QMbhFvrMbWngVcXgc5Z6UGpTlcLSZZ/a5bY9Pdod1npHB9OF+lMR0O2i0QjXMhivrBePwITEJEwFpxOZuOcvfCtIyVcDNbAKMAjWBzAuw1IfdH8+WVeO8jyFQoN+BAR/Vxf8npTgtSrMKkPE6z/hpt6kU1PhGYRSG1AtwxylHMpUPwRQZtXAwEMRpTG9WlMczyc0pj3pD2CxINWpOHZ85wlTCRmDaxjTmYdBR+AJwZRkE2J662N1lVYIDodMCbZMuT++25wftFIi4G1WhCaqKD54yqHN/Oog4GLKYY+9iPG7taBA6o/2Acq0Ntdd1aJx/FJREX9yVKx0btYrj0ctBIC5NrqYfcAPALr8BGJ+6AGQOhZXwkIMDuKTv6ucID9TqKWXNfjncwCVAxMMQhlN8t22EpI=
   bucket: medimach
+  region: eu-west-1
   file: $HOME/bin/TravisTest
   upload-dir: dlorenz
   acl: authenticated_read
