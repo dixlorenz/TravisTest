@@ -16,7 +16,6 @@ deploy:
   secure: "PJJbronvcbfi/DfOC7qIxUQOlZCWqUVQvKEFn47eP5SFDZZKefwVogzpSbRsX0e5zmO/FOzm5xrzr78A5TApxhQ7yPJj81OJHsNaN9xA+5aELM+Fm2kKSodfsjeM3xnHQLFMX7dEviQzdEpIJdc4qxZRTfhuxXsXB86J0H6iX4AhUOiXx2ypU9EoUTQ/FfLEWrMxkObR+CVF1hdjWKmNnVuznegsbuVcrjvcOhHjQFo8ruCBd0Y5sPBLdK8b2mCiZ645kQwJ66A4/oUob/naU3g1ODJbmSp+mGZSSP0bJaq8sdZU9MrU0FIjIy2Dcebq7Nqi9+xa04xSmbBjN9+WZri88YefdrFRUixX+++9QaDWIqLdbvaRtv6lK0e6x4ZfvkAvccHkTFxJKItCFIH3PNv0Ot/p73LHYLlGHDfiOwjt0Onpg3Xz46Xid1ln9M+NJ/35YRc5cbmyDI8Zu5/AbN5EC1jzLO7RwXL7DlXcvz9QR9LTxmQp9S1gBU9x246lxONYeng9iyPBqhY+Qoj3KkvZ6BvNNa6OW5jCItTRcIs8QDiRYVA9jKcWVzZiYtn/v6PTjvX1ltoh2ekGkTGhvFu6yYrukns+CChxxGtZwk/zJma0uKSExPBo1q7leBSH0oFATw3N3AhGS/P4EFEzRP4cqNY99iycdR5KiPBkW6U="
   bucket: medimach
   region: eu-west-1
-  local_dir: "$HOME/bin"
-  #file: "$HOME/bin/TravisTest"
+  local_dir: $HOME/bin
   upload-dir: dlorenz
   acl: authenticated_read
