@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE445D53216C9C35007EB75C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE445D52216C9C35007EB75C /* main.cpp */; };
 		CE445D63216CA199007EB75C /* UnitTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE445D62216CA199007EB75C /* UnitTests.mm */; };
-		CE445D6B216CB776007EB75C /* libboost_filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE445D6A216CB776007EB75C /* libboost_filesystem.a */; };
-		CE445D6C216CB776007EB75C /* libboost_filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE445D6A216CB776007EB75C /* libboost_filesystem.a */; };
-		CE445D6E216CB794007EB75C /* libboost_system.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE445D6D216CB794007EB75C /* libboost_system.a */; };
-		CE445D6F216CB794007EB75C /* libboost_system.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE445D6D216CB794007EB75C /* libboost_system.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,8 +30,6 @@
 		CE445D62216CA199007EB75C /* UnitTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UnitTests.mm; sourceTree = "<group>"; };
 		CE445D64216CA199007EB75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE445D69216CA7D7007EB75C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		CE445D6A216CB776007EB75C /* libboost_filesystem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_filesystem.a; path = /usr/local/boost168/lib/libboost_filesystem.a; sourceTree = "<absolute>"; };
-		CE445D6D216CB794007EB75C /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_system.a; path = /usr/local/boost168/lib/libboost_system.a; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,8 +37,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE445D6E216CB794007EB75C /* libboost_system.a in Frameworks */,
-				CE445D6B216CB776007EB75C /* libboost_filesystem.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +44,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE445D6F216CB794007EB75C /* libboost_system.a in Frameworks */,
-				CE445D6C216CB776007EB75C /* libboost_filesystem.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +55,6 @@
 			children = (
 				CE445D51216C9C35007EB75C /* TravisTest */,
 				CE445D61216CA199007EB75C /* UnitTests */,
-				CE445D6A216CB776007EB75C /* libboost_filesystem.a */,
-				CE445D6D216CB794007EB75C /* libboost_system.a */,
 				CE445D50216C9C35007EB75C /* Products */,
 			);
 			sourceTree = "<group>";
