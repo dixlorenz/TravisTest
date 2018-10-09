@@ -18,7 +18,7 @@ deploy:
   skip_cleanup: true
   provider: s3
   access_key_id: "AKIAJBNZK5EIAHEZHTSQ"
-  secret_access_key = 
+  secret_access_key: 
     secure: "rWssC6JrZ6VbHXaPrzWsn2GPVlNUafcrGoalusvMnFqM51C872lng4K+sr+B9vgk2w7VpRFPGtFeJT49hYYvsi6ZWcATlxGznbjtDYhaGAuyDqSbkvwfspopP8QIgD7V8T3LiXQmBrjDFEQ+XQnc9L644kyVJwgvqaD/C9aCYZkVG2nvWUBfpsPcLci+bN5JqNRUqWpvOM4OJWNkVEP7rbS/wYriXSe7dJe1ophldTRk9B0RCERFBS0AhxO7BEhdIsuig6ZDesyQuORCxwbbV0Ep80kjKiD23ko2LN/7Q/JFumPrw3r/wNnhbUrOY7is/18u6AbF2MnEnyyoDehi52wRhNXc4d4C+BOBYr6gpLVC1R6VCRR701AKg8K9Ejbl6FvNpQvUWuUMc0ZRGtpsV3RZu69Z1hXSosY4tjM481Jolml6oLalR/kmSlwtkOZRzXPA2q/8aq3zgXs+DDIx02AXp812BzcO5+oey7S6dVJbPZoX7ztVLA+ONRQT89C9YpNLH2swr2YsekxpdLUnD9Ijgvx9QZhb76DHc3YmqzDc/ICz49q0HKgorTMVMb9PkTAY5Hw65f6GpaY6CuvJAARv91l3ALC15tvJkGO4yj7VHc1k/uFEoTjKd46Vm/qnsKWSiii77LURM7+tF7ukJjrVpDyu+sqbvPuY+SN62Vc="
   bucket: medimach
   region: eu-west-1
