@@ -17,10 +17,10 @@ script:
 deploy:
   skip_cleanup: true
   provider: s3
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  access_key_id: AKIAICYRW6GNSXSSN3WQ
+  secret_access_key: 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
   bucket: medimach
   region: eu-west-1
   local_dir: $HOME/bin
-  upload-dir: dlorenz
+  upload-dir: builds/latest
   acl: authenticated_read
