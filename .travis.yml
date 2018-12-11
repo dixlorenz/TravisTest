@@ -7,18 +7,19 @@ branches:
 before_install: 
 
 install: 
+  - easy_install --user scan-build
 
 language: objective-c
 osx_image: xcode10
 
 script:
-  - set -o pipefail && xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
+  - set -o pipefail && scan-build --status-bugs xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
 
 deploy:
   skip_cleanup: true
   provider: s3
-  access_key_id: AKIAICYRW6GNSXSSN3WQ
-  secret_access_key: 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
+  access_key_id: 
+  secret_access_key: 
   bucket: medimach
   region: eu-west-1
   local_dir: $HOME/bin
