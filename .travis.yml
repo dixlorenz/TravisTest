@@ -15,7 +15,7 @@ osx_image: xcode10
 
 script:
   - export PATH="${HOME}/.local/bin:${PATH}" 
-  - set -o pipefail && scan-build --status-bugs xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
+  - set -o pipefail && scan-build --status-bugs xcodebuild -project TravisTest.xcodeproj DSTROOT=/ -configuration Release -scheme TravisTest build
 
 deploy:
   skip_cleanup: true
