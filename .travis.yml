@@ -7,12 +7,14 @@ branches:
 before_install: 
 
 install: 
+  - export PYTHONUSERBASE=~/.local
   - easy_install --user scan-build
 
 language: objective-c
 osx_image: xcode10
 
 script:
+  - export PATH="${HOME}/.local/bin:${PATH}" 
   - set -o pipefail && scan-build --status-bugs xcodebuild -project TravisTest.xcodeproj INSTALL_PATH=$HOME/bin DSTROOT=/ -configuration Release -scheme TravisTest install | xcpretty
 
 deploy:
