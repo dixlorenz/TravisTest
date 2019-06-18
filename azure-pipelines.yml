@@ -19,10 +19,11 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: |
-    $dateStr = (Get-Date).ToString('yyyy-MM-dd') 
-    echo "##vso[task.setvariable variable=dateString]#$dateStr"
-  displayName: 'setVar'
+- task: AzurePowerShell@4
+  inputs:
+    ScriptType: 'InlineScript'
+    Inline: '$dateStr = (Get-Date).ToString(''yyyy-MM-dd'') 
+          echo "##vso[task.setvariable variable=dateString]#$dateStr"'
 
 - script: |
     echo my variable is $(dateString)
