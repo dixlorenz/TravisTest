@@ -8,14 +8,13 @@
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[])
+{
    // insert code here...
 
    int *a = nullptr;
 
    std::cout << "Hello, World!\n";
-   std::cout << *a;
 
    return 0;
 }
-
