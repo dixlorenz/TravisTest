@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <ranges>
 
 int main(int argc, const char *argv[])
 {

@@ -11,7 +11,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,4 +26,25 @@ jobs:
         run: |
           echo $BRANCH
 
+      - name: install clang17
+        run:   |
+         sudo apt update
+         sudo apt install clang-17 libc++-17-dev libc++abi-17-dev
 
+      - name: clang version
+        run: clang --version
+
+      - name: clang version
+        run: clang --version
+        env:
+          CC:   clang-17
+          CXX:  clang++-17
+
+      - name: build travis
+        run: clang++-17 -std=c++20 -stdlib=libc++ main.cpp -o travis
+        env:
+          CC:   clang-17
+          CXX:  clang++-17
+
+      - name: run it
+        run: ./travis
