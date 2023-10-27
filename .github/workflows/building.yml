@@ -42,7 +42,7 @@ jobs:
 
       - name: build travis
         run: |
-          clang++-17 -std=c++20 -stdlib=libc++ main.cpp -o travis
+          clang++-17 -std=c++20 -stdlib=libc++ TravisTest/main.cpp -o travis
 
       - name: run it
         run: |
