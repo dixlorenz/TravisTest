@@ -33,6 +33,7 @@ jobs:
           sudo ./llvm.sh 17
           apt search libc++ | grep libc++
           sudo apt install libc++-17-dev libc++abi-17-dev
+          dpkg -L libc++-17-dev
 
       - name: clang version
         run: |
